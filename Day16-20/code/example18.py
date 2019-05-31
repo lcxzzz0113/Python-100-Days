@@ -12,6 +12,7 @@ class SingletonMeta(type):
     def __init__(cls, *args, **kwargs):
         cls.__instance = None
         cls.lock = threading.Lock()
+        #acquire(),release()
         super().__init__(*args, **kwargs)
 
     def __call__(cls, *args, **kwargs):
